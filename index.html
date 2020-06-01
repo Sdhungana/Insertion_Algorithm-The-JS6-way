@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+           function getValue(pos, val,arr){                     
+                var new_arr = [...arr];  //Spread operator(ES6)
+                const len = new_arr.length;
+                for(var i = len ; i >= pos ; i--){
+                    new_arr[i] = new_arr[i-1];
+                }
+                new_arr[pos-1] = val;
+                return new_arr;
+            }
+        console.log('Insertion Algorithm')
+        var arr = [];    
+        for(var i = 0 ; i < 5  ; i++){
+            arr[i] = parseInt(prompt('Enter the value: '),10);
+        }
+        console.log(arr);
+        const pos = parseInt(prompt('Enter position: '), 10);
+        if(pos == 0 || pos > arr.length) {
+            alert('Error : Out OF Range');
+        }
+        else {
+            const val = parseInt(prompt('Enter value: '), 10);
+            console.log(getValue(pos, val,arr));
+        }
+        
+    </script>
+</body>
+</html>
